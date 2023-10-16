@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std ;
-#define MAX 1000000
+// #define MAX 1000000
 int main()
 {
     int n;
     int sum =0 ;
     cin >> n ;
-    int arr[MAX];
+    int arr[10];
     for ( int i =0 ; i < n ; i++ )
     {
         cin >> arr[i] ;

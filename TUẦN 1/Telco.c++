@@ -33,4 +33,12 @@ int main(){
     string input ;
     cin >> input ;
     
+    do{
+        count ++ ;
+        cin >> fromNumber >> toNumber >> date >> fromTime >>toTime ;
+        validNumbers = validNumbers && checkNumber(fromNumber) && checkNumber(toNumber);
+        callCount[fromNumber] += 1 ;
+        durationcount[fromNumber] += getDuration(fromTime, toTime); 
+        cin >> input ;
+    } while (input!= "#");
 }
