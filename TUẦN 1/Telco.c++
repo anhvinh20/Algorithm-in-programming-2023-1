@@ -28,7 +28,7 @@ int main(){
     map <string,int> callCount;
     map <string, int> durationcount;
     int count =0 ;
-    int validNumbers = 1 ;
+    int validNumbers = 1 ; // instead of "call"
 
     string input ;
     cin >> input ;
@@ -41,4 +41,22 @@ int main(){
         durationcount[fromNumber] += getDuration(fromTime, toTime); 
         cin >> input ;
     } while (input!= "#");
-}
+
+    cin >> input ;
+    do {
+        if(input == "#") break ;
+        if(input == "?check_phone_number") {
+            cout << validNumbers << endl ;
+        } else if( input == "?number_calls_from"){
+            string number; cin >> number;
+            cout << callCount[number] << endl;
+        } else if(input == "?number_total_calls"){
+            cout << count << endl;
+        }else{
+            string number ; cin >> number ;
+            cout << durationcount[number] << endl;
+        }
+        cin >> input ;
+    }while(input!="#");
+    }
+
