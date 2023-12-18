@@ -15,7 +15,7 @@ int main(){
     for(int i = len-1 ; i>=0 ; i--){
         int so = int(a[i]-'0')+int(b[i]-'0') + nho ;
         res = char(so%k +'0') + res;
-        nho = so/k ;
+        nho = so/k ; 
     }
     if(nho>0) res = char(nho+'0') + res;
     cout << res;
