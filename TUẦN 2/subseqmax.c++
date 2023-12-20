@@ -2,23 +2,23 @@
 // Nhập vào n số phần tử của dãy, nhập vào mảng a[i]
 #include <bits/stdc++.h> 
 using namespace std;
-    int a[1000] ;
-
-
+#define MAX 10000000
+int a[MAX] ;
+int n ;
 
 int maxLeftMid(int i,int j){
-    int maxLM = a[j] ;
-    int s =0 ;
+    int s = a[j] ;
+    int maxLM = 0 ;
     for(int k=j-1 ; k>=i ; k--){
-        s +=a[k];
+        s += a[k];
         maxLM = max(maxLM,s);
     }
     return maxLM ;
 }
 
 int maxRightMid(int i,int j){
-    int maxRM = a[j] ;
-    int s =0 ;
+    int s = a[i] ;
+    int maxRM =0 ;
     for(int k=i+1 ; k<=j ; k++){
         s +=a[k];
         maxRM = max(maxRM,s);
@@ -34,17 +34,13 @@ int SubSeqMax(int i, int j){
     int maxLM = maxLeftMid(i,mid);
     int maxRM = maxRightMid(mid+1,j);
     int wM = maxLM + maxRM ;
-    return max(max(wL,wR), wM);
+    return max(max(wR,wM), wL);
 }
 
 int main(){
-        int n ;
         cin >> n;
         for(int i=0 ; i<n ; i++){
             cin >> a[i];
         }
-        cout << "\n";
-        cout << "Max: " << SubSeqMax(0,n-1) << endl ; 
-
-    
+        cout << SubSeqMax(0,n-1) << endl ;   
 }
