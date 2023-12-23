@@ -1,3 +1,8 @@
+// Cho n thành phố vào chi phí đi lại giwuax các thành phố c[n][n]
+// Chi phí đi lại giwuax thành phố i với chính nó là 0 
+// In ra chi phí ít nhất maf người đó muốn thăm tất cả các thành phố
+
+
 #include <bits/stdc++.h>
 using namespace std ;
 #define MAX 20
@@ -13,15 +18,15 @@ int f = 0 ;
 void Try(int k){
     for(int v = 1 ; v < n ; v++ ){
         if(!visited[v]){
-            visited[v] = true ;
-            x[k] = v ;
-            f += c[x[k-1]][v];
-            if( k == n -1 ){
+            visited[v] = true ;   // đánh dấu là đã đi
+            x[k] = v ;            // thêm vào lộ trình
+            f += c[x[k-1]][v];    // Cộng chi phí
+            if( k == n -1 ){      // Nếu đi đến cuối thì cộng thêm từ điểm cuối đến điểm đầu rồi so sánh
                 f_min = min(f_min , f+c[x[k]][0]);
-            }else{
+            }else{             // Nhánh cận nếu vẫn nhỏ hơn chi phí min thì tiếp tục ( cmin là chi phí ước lượng)
                 if(f+(n-k)*c_min <= f_min)  Try(k+1);
             }
-            f -= c[x[k-1]][v];
+            f -= c[x[k-1]][v];       // trả lại nếu ko đi
             visited[v] = false ;
         }
     }
