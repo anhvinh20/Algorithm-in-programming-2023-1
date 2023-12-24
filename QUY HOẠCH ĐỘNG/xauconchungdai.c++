@@ -1,8 +1,6 @@
 //LCS ( Longest common subsequence )
 // Nhập vào 2 xâu X,Y
 
-
-
 #include <bits/stdc++.h>
 using namespace std ;
 int main(){

@@ -1,4 +1,4 @@
-// Sinh hoán vị 
+// Sinh hoán vị ko trùng
 #include<bits/stdc++.h>
 using namespace std;
 int n ;
