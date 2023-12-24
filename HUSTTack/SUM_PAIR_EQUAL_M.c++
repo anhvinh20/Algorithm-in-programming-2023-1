@@ -1,11 +1,7 @@
 // Nhập vào n, M,  dãy số nguyên a[n] phần tử ( đôi một khác nhau )
 // Đếm các cặp Q(i,j) sao cho a[i]+a[j] =M
 
-
-#include <iostream>
-#include <vector>
-#include <algorithm>
-
+#include <bits/stdc++.h> 
 using namespace std;
 
 int main() {
