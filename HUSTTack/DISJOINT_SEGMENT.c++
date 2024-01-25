@@ -1,8 +1,7 @@
 // Nhập vào n và n số cặp X=(a1,b1);(a2,b2)....
 // Tìm mootj tập con của X có số lượng lớn nhất trong đó 
 // ko có 2 đoạn nào của tập con cắt nhau
-
-
+// Nhập 6 :   0 10 ; 3 7 ; 6 14 ; 9 11 ; 12 15 ; 17 19 --> 4
 // Đầu ra : Số lượng phân đoạn trong giải pháp
 
 #include <bits/stdc++.h> 
